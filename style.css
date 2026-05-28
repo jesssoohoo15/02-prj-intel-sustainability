@@ -1,1 +1,171 @@
-/* Add your CSS here */
+/* Removes default spacing from the browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic page design */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f6fa;
+  color: #222;
+}
+
+/* Header / Hero Section */
+.hero {
+  background-color: #0068b5;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+/* This keeps the hero content from getting too wide */
+.hero-box {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Intel logo */
+.logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 35px;
+}
+
+/* Main heading */
+.hero h1 {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+/* Hero paragraph */
+.hero p {
+  font-size: 22px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Timeline section */
+.timeline {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  padding: 40px;
+
+  /* LevelUp 1: Scroll Snap Effect */
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Each timeline card */
+.card {
+  background-color: white;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  border-top: 6px solid #0068b5;
+  box-shadow: 0 5px 15px rgba(0, 104, 181, 0.2);
+
+  /* LevelUp 1: Scroll Snap Effect */
+  scroll-snap-align: center;
+
+  /* LevelUp 2: CSS Transforms and smooth transitions */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* LevelUp 2: Hover transform effect */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 104, 181, 0.35);
+}
+
+/* Year text */
+.card h2 {
+  color: #0068b5;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+/* Card title */
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Card image */
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+  /* LevelUp 2: image transition */
+  transition: transform 0.3s;
+}
+
+/* LevelUp 2: image zoom on hover */
+.card:hover img {
+  transform: scale(1.04);
+}
+
+/* Card paragraph */
+.card p {
+  font-size: 15px;
+}
+
+/* Extra details are hidden at first */
+.more {
+  display: none;
+}
+
+/* Extra details show when you hover over the card */
+.card:hover .more {
+  display: inline;
+}
+
+/* Bottom instruction text */
+.bottom-text {
+  text-align: center;
+  color: #0068b5;
+  font-weight: bold;
+  margin: 20px;
+}
+
+/* Mobile screen changes */
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  /* On small screens, cards stack vertically */
+  .timeline {
+    flex-direction: column;
+    overflow-x: hidden;
+    padding: 25px;
+  }
+                        
+  .card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+         
+  /* On mobile, show all details without needing hover */
+  .more {
+    display: inline;
+  }
+}
